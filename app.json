@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "NASA",
+    "slug": "NASA",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "NASA"
+}
