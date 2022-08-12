@@ -25,13 +25,13 @@ export const Home=({navigation})=>{
             console.log(err.response.status)
             switch(err.response.status){
                 case 400:
-                    return(Alert.alert('Error Occured','invalid request'))
-                    break
+                    Alert.alert('Error Occured','invalid request')
+                    break;
                 case 429:
-                return(Alert.alert('Error Occured','Too many requests'))
-                break
+                    Alert.alert('Error Occured','Too many requests')
+                    break;
                 default:
-                    return(Alert.alert('Error Occured','Something went Wrong'))
+                    Alert.alert('Error Occured','Something went Wrong')
             }  
         }})
       }else{
@@ -40,7 +40,7 @@ export const Home=({navigation})=>{
     }
     return(
         <ScrollView style={styles.container}>
-            <View style={styles.view}>
+            <View style={[styles.view,{marginTop:24}]}>
             <Text style={styles.boldText}>Picture of the day:</Text>
             <Text>Search for Astronomy Picture of the day by date.</Text>
             <TextField placeholder={'Start date'} onchangeText={(text)=>setstartdate(text)}></TextField>

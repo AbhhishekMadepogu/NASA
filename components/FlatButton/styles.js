@@ -5,10 +5,11 @@ export const styles = StyleSheet.create({
     backgroundColor:{moondust50},
     width:'100%',
     alignSelf:'center'
-    ,height:40,
+    ,height:48,
+    marginTop:16,
     alignItems:'center',
     justifyContent:'center',
-    borderRadius:10,
+    borderRadius:8,
     borderWidth:1,
     borderColor:{moondust500}},
     text:{

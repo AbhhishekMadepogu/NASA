@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import { moondust50,moondust900 } from '../../colors';
 export const styles = StyleSheet.create({
-    text:{height:50,
+    text:{height:64,
         backgroundColor:{moondust50},
-        borderRadius:10,
+        borderRadius:8,
         color:{moondust900},
-        marginVertical:10}
+        marginTop:16}
 })
