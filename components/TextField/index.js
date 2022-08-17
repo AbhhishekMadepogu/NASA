@@ -5,9 +5,9 @@ import{TextInput,View} from 'react-native';
 import { moondust500 } from "../../colors";
 import { styles } from "./styles";
 export const TextField=({placeholder,onchangeText})=>{
-    return(
-        <View>
-        <TextInput placeholder={placeholder} style={styles.text} onChangeText={onchangeText} placeholderTextColor={moondust500} maxLength={10}></TextInput>
-        </View>
-    );
+return(
+<View>
+<TextInput placeholder={placeholder} style={styles.text} onChangeText={onchangeText} placeholderTextColor={moondust500} maxLength={10}></TextInput>
+</View>
+);
 }
