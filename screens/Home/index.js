@@ -4,6 +4,7 @@ import { FlatButton } from "../../components/FlatButton";
 import { TextField } from "../../components/TextField";
 import { styles } from "./styles";
 import { URL } from "../../api/config";
+
 import axios from "axios";
 
 export const Home=({navigation})=>{
@@ -11,12 +12,14 @@ const [results,setResults]=useState([]);
 const [startdate,setstartdate]=useState('');
 const [enddate,setenddate]=useState('');
 const [loading,setLoading]=useState(false);
+
 const  fetchImages=async()=>{
 // regex to test the string to be a date yyyy-mm-dd
 var date_regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 if((date_regex.test(startdate))&&(date_regex.test(enddate))){
 setLoading(true)
-axios.get(URL+`&start_date=${startdate}&end_date=${enddate}`).then(res=>{console.log(res.data);    
+await axios.get(URL+`&start_date=${startdate}&end_date=${enddate}`).then(res=>{
+console.log(res.data);    
 setResults(res.data);
 setLoading(false)
 }).catch
@@ -50,7 +53,7 @@ return(
 </View>
 <View style={styles.view}>
 <Text style={styles.boldText}>Results({results.length}):</Text>
-{results.length===0?<Text>No Results found. Enter a start and end date</Text>:
+{results.length===0 ? <Text>No Results found. Enter a start and end date</Text> :
 <FlatList 
 bounces={false}
 showsVerticalScrollIndicator={false}

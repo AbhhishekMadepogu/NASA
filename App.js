@@ -13,7 +13,7 @@ return (
 <NavigationContainer>
 <Stack.Navigator initialRouteName='Home' screenOptions={{headerBackTitleVisible: false,headerBackImage: MyCustomHeaderBackImage,headerTitleStyle:{color:{moondust800}}}} >
 <Stack.Screen name='Picture of the day' component={Home} />
-<Stack.Screen name='Details' component={Details} options={({ route }) => ({ title: route.params.name })}/>
+<Stack.Screen name='' component={Details} options={({ route }) => ({ title: route.params.name })}/>
 </Stack.Navigator>
 </NavigationContainer>
 );
