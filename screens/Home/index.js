@@ -59,7 +59,7 @@ bounces={false}
 showsVerticalScrollIndicator={false}
 numColumns={3}
 data={results} 
-keyExtractor={(_item,index)=>index.toString()}
+keyExtractor={(index)=>index.toString()}
 renderItem={({item})=>(
 <Pressable style={{margin:3}} onPress={()=>navigation.navigate('Details',{name:item.title,img:item.url,desc:item.explanation})}>
 <Image source={{uri:item.url}} style={{height:105,width:105,borderRadius:4}}></Image>
