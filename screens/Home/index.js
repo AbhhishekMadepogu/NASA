@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import{Text,View,SafeAreaView, ActivityIndicator, Alert,FlatList,TouchableOpacity,Image,ScrollView} from 'react-native';
+import{Text,View,ActivityIndicator, Alert,FlatList,Pressable,Image,ScrollView} from 'react-native';
 import { FlatButton } from "../../components/FlatButton";
 import { TextField } from "../../components/TextField";
 import { styles } from "./styles";
@@ -15,7 +15,7 @@ const [loading,setLoading]=useState(false);
 
 const  fetchImages=async()=>{
 // regex to test the string to be a date yyyy-mm-dd
-var date_regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+let date_regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
 if((date_regex.test(startdate))&&(date_regex.test(enddate))){
 setLoading(true)
 await axios.get(URL+`&start_date=${startdate}&end_date=${enddate}`).then(res=>{
@@ -59,11 +59,11 @@ bounces={false}
 showsVerticalScrollIndicator={false}
 numColumns={3}
 data={results} 
-keyExtractor={(item,index)=>index.toString()}
+keyExtractor={(_item,index)=>index.toString()}
 renderItem={({item})=>(
-<TouchableOpacity style={{margin:3}} onPress={()=>navigation.navigate('Details',{name:item.title,img:item.url,desc:item.explanation})}>
+<Pressable style={{margin:3}} onPress={()=>navigation.navigate('Details',{name:item.title,img:item.url,desc:item.explanation})}>
 <Image source={{uri:item.url}} style={{height:105,width:105,borderRadius:4}}></Image>
-</TouchableOpacity>)}></FlatList>
+</Pressable>)}></FlatList>
 }
 </View>
 </ScrollView>

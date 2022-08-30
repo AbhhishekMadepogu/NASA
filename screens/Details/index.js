@@ -2,7 +2,7 @@ import react from "react"
 import { Text,SafeAreaView,Image,Dimensions,View } from "react-native"
 import { styles } from "./styles";
 
-export const Details=({route,navigation})=>{
+export const Details=({route})=>{
 const windowWidth = Dimensions.get('window').width;
 const{img,desc}=route.params
 return(
