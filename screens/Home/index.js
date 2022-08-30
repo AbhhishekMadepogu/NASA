@@ -22,8 +22,7 @@ await axios.get(URL+`&start_date=${startdate}&end_date=${enddate}`).then(res=>{
 console.log(res.data);    
 setResults(res.data);
 setLoading(false)
-}).catch
-(err=>{if(err.response){
+}).catch(err=>{if(err.response){
 setLoading(false)
 console.log(err.response.status)
 switch(err.response.status){
