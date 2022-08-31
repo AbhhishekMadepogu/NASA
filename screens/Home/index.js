@@ -15,7 +15,7 @@ const [loading,setLoading]=useState(false);
 
 const  fetchImages=async()=>{
 // regex to test the string to be a date yyyy-mm-dd
-let date_regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+let date_regex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 if((date_regex.test(startdate))&&(date_regex.test(enddate))){
 setLoading(true)
 await axios.get(URL+`&start_date=${startdate}&end_date=${enddate}`).then(res=>{
