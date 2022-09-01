@@ -1,5 +1,6 @@
 import React, { useState} from "react";
-import{Text,View,ActivityIndicator, Alert,FlatList,Pressable,Image,ScrollView} from 'react-native';
+import{Text,View,ActivityIndicator, Alert,FlatList,Pressable,Image} from 'react-native';
+import { ScrollView } from 'react-native-virtualized-view';
 import { FlatButton } from "../../components/FlatButton";
 import { TextField } from "../../components/TextField";
 import { styles } from "./styles";
