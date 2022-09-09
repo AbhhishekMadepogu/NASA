@@ -1,14 +1,6 @@
 import { useRef } from "react";
-import {
-  Text,
-  Image,
-  Dimensions,
-  View,
-  ScrollView,
-  Animated,
-} from "react-native";
+import { Text, Dimensions, View, Animated } from "react-native";
 import { styles } from "./styles";
-
 export const Details = ({ route }) => {
   const scrollA = useRef(new Animated.Value(0)).current;
   const windowWidth = Dimensions.get("window").width;
