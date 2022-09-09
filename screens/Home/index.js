@@ -7,6 +7,7 @@ import {
   FlatList,
   Pressable,
   Image,
+  TextInput,
 } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
 import { FlatButton } from "../../components/FlatButton";
@@ -60,16 +61,18 @@ export const Home = ({ navigation }) => {
     }
   };
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
       <View style={[styles.view, { marginTop: 24 }]}>
         <Text style={styles.boldText}>Picture of the day:</Text>
         <Text>Search for Astronomy Picture of the day by date.</Text>
         <TextField
           placeholder={"Start date"}
+          value={startdate}
           onchangeText={(text) => setstartdate(text)}
         ></TextField>
         <TextField
           placeholder={"End date"}
+          value={enddate}
           onchangeText={(text) => setenddate(text)}
         ></TextField>
         <FlatButton text={"Search"} onPress={() => fetchImages()}></FlatButton>

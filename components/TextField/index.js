@@ -4,13 +4,14 @@ import { TextInput, View } from "react-native";
 //Tried implementing floatinglabelinput but having issues with react-native-reanimated
 import { moondust500 } from "../../colors";
 import { styles } from "./styles";
-export const TextField = ({ placeholder, onchangeText }) => {
+export const TextField = (props) => {
   return (
     <View>
       <TextInput
-        placeholder={placeholder}
+        placeholder={props.placeholder}
         style={styles.text}
-        onChangeText={onchangeText}
+        value={props.value}
+        onChangeText={props.onchangeText}
         placeholderTextColor={moondust500}
         maxLength={10}
       ></TextInput>

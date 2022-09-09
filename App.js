@@ -23,7 +23,7 @@ export default function App() {
       >
         <Stack.Screen name="Picture of the day" component={Home} />
         <Stack.Screen
-          name="details"
+          name="Details"
           component={Details}
           options={({ route }) => ({ title: route.params.name })}
         />
